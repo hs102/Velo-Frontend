@@ -15,6 +15,7 @@ import {
   DashboardPage,
   ProjectsPage,
   TasksPage,
+  ProfilePage,
   NotFoundPage
 } from './pages';
 import { Loader } from './components/Common';
@@ -85,6 +86,7 @@ const AppRoutes = () => {
           <Route path="projects" element={<ProjectsPage />} />
           <Route path="projects/:id" element={<ProjectDetail />} />
           <Route path="tasks" element={<TasksPage />} />
+          <Route path="profile" element={<ProfilePage />} />
         </Route>
       </Route>
       
