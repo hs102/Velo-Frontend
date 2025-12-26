@@ -1,0 +1,9 @@
+/**
+ * Global Entry Point Styles
+ */
+@import './styles/global.css';
+
+/* Additional global styles */
+#root {
+  min-height: 100vh;
+}
