@@ -5,7 +5,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Button, Loader } from '../components/Common';
-import { validateEmail, validatePassword, validateUsername } from '../utils/validators';
+import { isValidEmail, validatePassword, validateUsername } from '../utils/validators';
 import styles from '../styles/Profile.module.css';
 
 const ProfilePage = () => {
