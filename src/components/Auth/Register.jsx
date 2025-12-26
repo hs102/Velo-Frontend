@@ -66,12 +66,17 @@ const Register = () => {
       <div className={styles.authCard}>
         {/* Logo */}
         <div className={styles.logo}>
-          <span className={styles.logoText}>TaskManager</span>
+          <img 
+            src="/velo-logo.png" 
+            alt="Velo Logo" 
+            className={styles.logoImage}
+          />
+          <span className={styles.logoText}>Velo</span>
         </div>
         
         {/* Title */}
-        <h1 className={styles.title}>Create an account</h1>
-        <p className={styles.subtitle}>Start organizing your tasks today</p>
+        <h1 className={styles.title}>Join Velo</h1>
+        <p className={styles.subtitle}>Create an account to start managing your tasks</p>
         
         {/* Error message */}
         {error && (

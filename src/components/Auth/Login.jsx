@@ -66,11 +66,16 @@ const Login = () => {
       <div className={styles.authCard}>
         {/* Logo */}
         <div className={styles.logo}>
-          <span className={styles.logoText}>TaskManager</span>
+          <img 
+            src="/velo-logo.png" 
+            alt="Velo Logo" 
+            className={styles.logoImage}
+          />
+          <span className={styles.logoText}>Velo</span>
         </div>
         
         {/* Title */}
-        <h1 className={styles.title}>Welcome back</h1>
+        <h1 className={styles.title}>Welcome to Velo</h1>
         <p className={styles.subtitle}>Sign in to your account to continue</p>
         
         {/* Error message */}
