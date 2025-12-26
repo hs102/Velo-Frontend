@@ -1,0 +1,262 @@
+/**
+ * Dashboard Page Styles
+ */
+
+.dashboard {
+  max-width: var(--content-max-width);
+}
+
+.dashboardHeader {
+  margin-bottom: var(--space-6);
+}
+
+.greeting {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.subtext {
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+/* Stats Cards */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.statCard {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-sm);
+}
+
+.statCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-2);
+}
+
+.statLabel {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.statIcon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statIconProjects {
+  background-color: var(--info-light);
+  color: var(--info);
+}
+
+.statIconTasks {
+  background-color: var(--accent-light);
+  color: var(--accent-primary);
+}
+
+.statIconCompleted {
+  background-color: var(--success-light);
+  color: var(--success);
+}
+
+.statIconOverdue {
+  background-color: var(--danger-light);
+  color: var(--danger);
+}
+
+.statValue {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--text-primary);
+}
+
+/* Section */
+.section {
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+  box-shadow: var(--shadow-sm);
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+}
+
+.viewAllLink {
+  font-size: var(--font-size-sm);
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+.viewAllLink:hover {
+  text-decoration: underline;
+}
+
+/* Recent Projects */
+.recentProjectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+}
+
+.miniProjectCard {
+  padding: var(--space-4);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--accent-primary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.miniProjectCard:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.miniProjectName {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: var(--space-1);
+}
+
+.miniProjectMeta {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+/* Upcoming Tasks */
+.upcomingTasksList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.upcomingTaskItem {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.upcomingTaskItem:hover {
+  background-color: var(--bg-tertiary);
+}
+
+.taskPriorityIndicator {
+  width: 4px;
+  height: 36px;
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.priorityHigh {
+  background-color: var(--danger);
+}
+
+.priorityMedium {
+  background-color: var(--warning);
+}
+
+.priorityLow {
+  background-color: var(--success);
+}
+
+.taskInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.taskName {
+  font-weight: var(--font-weight-medium);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.taskDue {
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+}
+
+.taskDueOverdue {
+  color: var(--danger);
+}
+
+.taskProjectName {
+  font-size: var(--font-size-sm);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* Progress */
+.progressSection {
+  margin-top: var(--space-4);
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-2);
+}
+
+.progressBar {
+  height: 8px;
+  background-color: var(--bg-tertiary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--success);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-normal);
+}
+
+/* Empty state */
+.emptySection {
+  text-align: center;
+  padding: var(--space-6);
+  color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
