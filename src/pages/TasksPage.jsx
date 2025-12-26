@@ -7,6 +7,7 @@ import { useTasks } from '../hooks/useTasks';
 import { useProjects } from '../hooks/useProjects';
 import { TaskList, TaskForm, TaskFilters } from '../components/Tasks';
 import { Modal, Button } from '../components/Common';
+import ChatBot from '../components/ChatBot';
 import styles from '../styles/Tasks.module.css';
 
 const TasksPage = () => {
@@ -23,7 +24,7 @@ const TasksPage = () => {
   } = useTasks();
 
   // Also load projects for the form dropdown
-  const { fetchProjects } = useProjects();
+  const { projects, fetchProjects } = useProjects();
 
   const [showModal, setShowModal] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
@@ -202,6 +203,9 @@ const TasksPage = () => {
           loading={formLoading}
         />
       </Modal>
+
+      {/* Chatbot */}
+      <ChatBot context={{ projects, tasks }} />
     </div>
   );
 };

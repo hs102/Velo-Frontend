@@ -8,6 +8,7 @@ import { useAuth } from '../hooks/useAuth';
 import { DataContext } from '../context/DataContext';
 import { formatDate, isOverdue } from '../utils/dateFormatter';
 import { Loader } from '../components/Common';
+import ChatBot from '../components/ChatBot';
 import styles from '../styles/Dashboard.module.css';
 
 const DashboardPage = () => {
@@ -211,6 +212,9 @@ const DashboardPage = () => {
           </div>
         )}
       </div>
+
+      {/* Chatbot */}
+      <ChatBot context={{ projects, tasks }} />
     </div>
   );
 };

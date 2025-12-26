@@ -6,6 +6,7 @@ import React, { useState, useEffect } from 'react';
 import { useProjects } from '../hooks/useProjects';
 import { ProjectList, ProjectForm } from '../components/Projects';
 import { Modal, Button } from '../components/Common';
+import ChatBot from '../components/ChatBot';
 import styles from '../styles/Projects.module.css';
 
 const ProjectsPage = () => {
@@ -137,6 +138,9 @@ const ProjectsPage = () => {
           loading={formLoading}
         />
       </Modal>
+
+      {/* Chatbot */}
+      <ChatBot context={{ projects }} />
     </div>
   );
 };
