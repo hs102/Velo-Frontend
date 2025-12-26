@@ -5,7 +5,8 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../hooks/useAuth';
 import { Button, Loader } from '../components/Common';
-import { validateEmail, validatePassword, validateUsername } from '../utils/validators';
+import ChatBot from '../components/ChatBot';
+import { isValidEmail, validatePassword, validateUsername } from '../utils/validators';
 import styles from '../styles/Profile.module.css';
 
 const ProfilePage = () => {
@@ -60,12 +61,17 @@ const ProfilePage = () => {
     const errors = {};
 
     // Validate email
-    const emailError = validateEmail(formData.email);
-    if (emailError) errors.email = emailError;
+    if (!formData.email) {
+      errors.email = 'Email is required';
+    } else if (!isValidEmail(formData.email)) {
+      errors.email = 'Please enter a valid email address';
+    }
 
     // Validate username
-    const usernameError = validateUsername(formData.username);
-    if (usernameError) errors.username = usernameError;
+    const usernameValidation = validateUsername(formData.username);
+    if (!usernameValidation.isValid) {
+      errors.username = usernameValidation.message;
+    }
 
     // If changing password, validate
     if (formData.newPassword || formData.confirmPassword) {
@@ -73,8 +79,10 @@ const ProfilePage = () => {
         errors.currentPassword = 'Current password is required to change password';
       }
 
-      const passwordError = validatePassword(formData.newPassword);
-      if (passwordError) errors.newPassword = passwordError;
+      const passwordValidation = validatePassword(formData.newPassword);
+      if (!passwordValidation.isValid) {
+        errors.newPassword = passwordValidation.message;
+      }
 
       if (formData.newPassword !== formData.confirmPassword) {
         errors.confirmPassword = 'Passwords do not match';
@@ -339,6 +347,9 @@ const ProfilePage = () => {
           </div>
         </form>
       </div>
+
+      {/* Chatbot */}
+      <ChatBot />
     </div>
   );
 };
