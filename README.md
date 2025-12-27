@@ -148,11 +148,7 @@ The integrated chatbot uses a Large Language Model (LLM) to provide intelligent 
 - **Conversation History**: Maintains chat context during session
 
 
-## Environment Variables
 
-```env
-REACT_APP_API_URL=http://localhost:8001/api
-```
 
 ## Project Structure
 
@@ -173,84 +169,6 @@ src/
 └── utils/             # Validators, formatters
 ```
 
-## Deployment
-
-### Live Links
-- **Frontend**: TBD (Deploy using instructions below)
-- **Backend**: https://velo-backend-a2rv.onrender.com
-
-### Deploy to Vercel (Recommended - FREE)
-
-**Why Vercel:**
-- Free tier with unlimited deployments
-- Auto-deploys from GitHub
-- Fast global CDN
-- Zero configuration for React apps
-- Perfect for student projects
-
-**Steps:**
-
-1. **Push code to GitHub** (if not already)
-   ```bash
-   git add .
-   git commit -m "Ready for deployment"
-   git push origin main
-   ```
-
-2. **Deploy to Vercel**
-   ```bash
-   npm install -g vercel
-   vercel login
-   vercel
-   ```
-
-3. **Follow prompts:**
-   - Set up and deploy? `Y`
-   - Which scope? (Select your account)
-   - Link to existing project? `N`
-   - Project name? `velo-frontend` (or press Enter)
-   - Directory? `./` (press Enter)
-   - Want to override settings? `N`
-
-4. **Set environment variable:**
-   - Go to Vercel Dashboard → Your Project → Settings → Environment Variables
-   - Add: `REACT_APP_API_URL` = `https://velo-backend-a2rv.onrender.com/api`
-   - Or via CLI: `vercel env add REACT_APP_API_URL`
-
-5. **Redeploy:**
-   ```bash
-   vercel --prod
-   ```
-
-Your app will be live at: `https://velo-frontend-[random].vercel.app`
-
-### Alternative: Deploy to Netlify
-
-```bash
-npm install -g netlify-cli
-netlify login
-netlify init
-netlify deploy --prod
-```
-
-Environment variable: Add `REACT_APP_API_URL` in Netlify Dashboard → Site Settings → Environment Variables
-
-### Alternative: Deploy to Render
-
-1. Create new **Static Site** on Render
-2. Connect GitHub repo
-3. Build command: `npm run build`
-4. Publish directory: `build`
-5. Add environment variable: `REACT_APP_API_URL`
-
-### Test Deployment
-
-After deployment, verify:
-- [ ] Login/Register works
-- [ ] Projects CRUD operations work
-- [ ] Tasks CRUD operations work
-- [ ] Chatbot connects successfully
-- [ ] Profile updates work
 
 ## Wireframes
 
@@ -404,5 +322,7 @@ After deployment, verify:
 
 ## deployed links
 
+- **Frontend**: https://velo-frontend-app.vercel.app
+- **Backend**: https://velo-backend-a2rv.onrender.com
 
 
